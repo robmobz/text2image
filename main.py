@@ -107,7 +107,7 @@ async def ip_check_middleware(request: Request, call_next):
     return response
 
 # Mount images directory for static access
-app.mount("/images_static", StaticFiles(directory="app/images", html=True), name="images_static")
+app.mount("/images_static", StaticFiles(directory="/app/images", html=True), name="images_static")
 
 # Include cache management router
 app.include_router(cache_manager.router)
